@@ -1,0 +1,26 @@
+@import 'null';
+@import 'variables';
+
+/* Code navigation */
+
+/* -------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------- */
+
+/* === Common === */
+
+$maxWidth: ( x );
+
+/* START */
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+    max-width: 1175px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/*  */
