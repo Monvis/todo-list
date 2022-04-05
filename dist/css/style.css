@@ -1,0 +1,252 @@
+/* Null */
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* === General === */
+
+/* START */
+
+body {
+  font-family: 'Readex Pro', sans-serif;
+  background: -webkit-gradient(linear, left top, left bottom, from(#68EACC), to(#497BE8));
+  background: -o-linear-gradient(top, #68EACC 0%, #497BE8 100%);
+  background: linear-gradient(to bottom, #68EACC 0%, #497BE8 100%);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.wrapper {
+  height: 100%;
+  padding: 0 20px;
+}
+
+/* 1. Todo */
+
+.todo {
+  -webkit-transform: translateY(30%);
+      -ms-transform: translateY(30%);
+          transform: translateY(30%);
+  margin: 0 auto;
+  padding: 20px 0;
+  max-width: 400px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.todo__header h1 {
+  font-size: calc(20px + 6 * ((100vw - 320px) / 1280));
+  font-weight: bold;
+}
+
+.todo__input-field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 20px;
+  height: 45px;
+}
+
+.todo__input-field input {
+  padding: 0 20px;
+  width: 85%;
+  height: 100%;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.075);
+}
+
+.todo__input-field button {
+  font-size: 32px;
+  display: inline-block;
+  width: 50px;
+  height: 100%;
+  color: #fff;
+  border-radius: 3px;
+  background-color: #8E49EB;
+}
+
+.todo__input-field button::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+
+.todo__list {
+  margin: 30px 0 30px 0;
+}
+
+.todo__list li {
+  font-size: calc(12px + 2 * ((100vw - 320px) / 1280));
+  position: relative;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 60px;
+  min-height: 50px;
+  line-height: 50px;
+  white-space: nowrap;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  border-radius: 3px;
+  background-color: rgba(182, 182, 182, 0.205);
+}
+
+.todo__list li:hover span {
+  right: 0;
+  opacity: 1;
+}
+
+.todo__list span {
+  position: absolute;
+  top: 0;
+  right: -30px;
+  opacity: 0;
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+  border-radius: 0 3px 3px 0;
+  cursor: pointer;
+}
+
+.todo__list span img {
+  width: 50px;
+  height: 50px;
+  opacity: 0.8;
+  border-radius: 0 3px 3px 0;
+}
+
+.todo__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.todo__footer span {
+  font-size: calc(13px + 3 * ((100vw - 320px) / 1280));
+}
+
+.todo__footer button {
+  font-size: calc(11px + 4 * ((100vw - 320px) / 1280));
+  padding: 10px 13px;
+  color: #fff;
+  white-space: nowrap;
+  border-radius: 3px;
+  background-color: #8E49EB;
+}
+
+@media screen and (min-width: 1600px) {
+  .todo h1 {
+    font-size: 26px;
+  }
+
+  .todo li {
+    font-size: 14px;
+  }
+
+  .todo__footer span {
+    font-size: 16px;
+  }
+
+  .todo__footer button {
+    font-size: 15px;
+  }
+}
