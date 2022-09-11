@@ -10,7 +10,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Readex+Pro:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-	<div class="wrapper">
+	<div class="app">
 		<div class="todo">
 			<div class="container">
 				<div class="todo__header">
@@ -20,15 +20,15 @@
 					<input class="todo__input" type="text" placeholder="Add your new todo">
 					<button class="todo__btn">+</button>
 				</div>
-				<div class="todo__list">
-					<ul>
-						<li>Lorem ipsum dolor sit amet consectetur <span><img src="img/delete.png" alt=""></span></li>
-						<li>Lorem ipsum dolor sit amet consectetur <span><img src="img/delete.png" alt=""></span></li>
-						<li>Lorem ipsum dolor sit amet consectetur <span><img src="img/delete.png" alt=""></span></li>
+				<div class="todo__wrapper">
+					<!-- Plug -->
+					<h2 class="todo__list-plug">You don't have tasks, let's<br> create the first one :)</h2>
+					<ul class="todo__list">
+						<!-- //Some tasks -->
 					</ul>
 				</div>
 				<div class="todo__footer">
-					<span>You have 3 active tasks</span>
+					<span class="todo__tracker">You have 0 active task(s)<!-- Tasks tracker --></span>
 					<button class="todo__delete-btn">Clear All</button>
 				</div>
 			</div>

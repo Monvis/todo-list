@@ -94,6 +94,7 @@ h6 {
 
 body {
   font-family: 'Readex Pro', sans-serif;
+  overflow: hidden;
   background: -webkit-gradient(linear, left top, left bottom, from(#68EACC), to(#497BE8));
   background: -o-linear-gradient(top, #68EACC 0%, #497BE8 100%);
   background: linear-gradient(to bottom, #68EACC 0%, #497BE8 100%);
@@ -105,17 +106,19 @@ body {
   padding: 0 20px;
 }
 
-.wrapper {
-  height: 100%;
+.app {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   padding: 0 20px;
 }
 
 /* 1. Todo */
 
 .todo {
-  -webkit-transform: translateY(30%);
-      -ms-transform: translateY(30%);
-          transform: translateY(30%);
   margin: 0 auto;
   padding: 20px 0;
   max-width: 400px;
@@ -154,6 +157,7 @@ body {
   height: 100%;
   color: #fff;
   border-radius: 3px;
+  opacity: 0.5;
   background-color: #8E49EB;
 }
 
@@ -164,11 +168,17 @@ body {
   height: 100%;
 }
 
-.todo__list {
-  margin: 30px 0 30px 0;
+.todo__wrapper {
+  margin: 40px 0;
+  height: 170px;
+  overflow-y: auto;
 }
 
-.todo__list li {
+.todo__wrapper::-webkit-scrollbar {
+  width: 0px;
+}
+
+.todo__wrapper li {
   font-size: calc(12px + 2 * ((100vw - 320px) / 1280));
   position: relative;
   margin-bottom: 10px;
@@ -184,12 +194,12 @@ body {
   background-color: rgba(182, 182, 182, 0.205);
 }
 
-.todo__list li:hover span {
+.todo__wrapper li:hover span {
   right: 0;
   opacity: 1;
 }
 
-.todo__list span {
+.todo__wrapper span {
   position: absolute;
   top: 0;
   right: -30px;
@@ -201,11 +211,26 @@ body {
   cursor: pointer;
 }
 
-.todo__list span img {
+.todo__wrapper span img {
   width: 50px;
   height: 50px;
   opacity: 0.8;
   border-radius: 0 3px 3px 0;
+}
+
+.todo__list-plug {
+  font-size: calc(12px + 14 * ((100vw - 320px) / 1280));
+  padding: 40px 0;
+  opacity: 0.6;
+  line-height: 35px;
+  text-align: center;
+}
+
+.todo__item p {
+  white-space: nowrap;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
 }
 
 .todo__footer {

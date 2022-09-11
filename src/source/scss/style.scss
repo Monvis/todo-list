@@ -1,3 +1,4 @@
+
 @import 'null';
 @import 'variables';
 
@@ -9,6 +10,7 @@ $maxWidth: ( 1600 );
 
 body {
     font-family: 'Readex Pro', sans-serif;
+    overflow: hidden;
     background: linear-gradient(to bottom, #68EACC 0%, #497BE8 100%);
 }
 
@@ -18,15 +20,17 @@ body {
     padding: 0 20px;
 }
 
-.wrapper {
-    height: 100%;
+.app {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     padding: 0 20px;
 }
 
 /* 1. Todo */
 
 .todo {
-    transform: translateY(30%);
     margin: 0 auto;
     padding: 20px 0;
     max-width: 400px;
@@ -62,6 +66,7 @@ body {
             height: 100%;
             color: #fff;
             border-radius: 3px;
+            opacity: 0.5;
             background-color: #8E49EB;
 
             // text centering
@@ -74,8 +79,14 @@ body {
         }
     }
 
-    &__list {
-        margin: 30px 0 30px 0;
+    &__wrapper {
+        margin: 40px 0;
+        height: 170px;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+            width: 0px;
+        }
 
         li {
             @include adaptive-font(14, 12);
@@ -112,6 +123,26 @@ body {
                 opacity: 0.8;
                 border-radius: 0 3px 3px 0;
             }
+        }
+    }
+
+    &__list {
+
+        &-plug {
+            @include adaptive-font(26, 12);
+            padding: 40px 0;
+            opacity: 0.6;
+            line-height: 35px;
+            text-align: center;
+        }
+    }
+
+    &__item {
+
+        p {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
     }
 
