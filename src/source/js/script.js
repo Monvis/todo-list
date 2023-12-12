@@ -18,9 +18,8 @@ let warning    = document.createElement('p')
 // Event handlers
 
 addBtn.addEventListener('click', createTask)
-message.addEventListener('keydown', EnterBtn)
+message.addEventListener('keydown', enterBtn)
 todo.addEventListener('click', deleteTask)
-todo.addEventListener('click', checkInput)
 todo.addEventListener('click', isTaskCompleate)
 
 
@@ -135,7 +134,7 @@ message.oninput = function() {
 }
 
 // Adding a task with "Enter" button
-function EnterBtn(e) { if ( e.keyCode === 13 ) { createTask() } }
+function enterBtn(e) { if ( e.keyCode === 13 ) { createTask() } }
 
 
 deleteList.addEventListener('click', function() {

@@ -20,7 +20,6 @@ let warning    = document.createElement('p')
 addBtn.addEventListener('click', createTask)
 message.addEventListener('keydown', EnterBtn)
 todo.addEventListener('click', deleteTask)
-todo.addEventListener('click', checkInput)
 todo.addEventListener('click', isTaskCompleate)
 
 
@@ -76,19 +75,6 @@ function taskTracker() {
 
     counter = todoList.length
     tracker.innerHTML = `You have ${counter} active task(s)`
-}
-
-//! Need refactoring
-function checkInput(elem) {
-
-    if (elem.target.classList.contains('input-checkbox')) {
-
-        if (elem.target.hasAttribute('checked')) {
-            elem.target.removeAttribute('checked')
-        } else {
-            elem.target.setAttribute('checked', '')
-        }
-    }
 }
 
 function isTaskCompleate(elem) {
