@@ -123,7 +123,27 @@ body {
   text-decoration: line-through;
 }
 
-@-webkit-keyframes dysplayNone {
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fade-out {
   from {
     opacity: 1;
   }
@@ -133,7 +153,7 @@ body {
   }
 }
 
-@keyframes dysplayNone {
+@keyframes fade-out {
   from {
     opacity: 1;
   }
@@ -275,6 +295,8 @@ body {
 .todo__list-plug {
   font-size: calc(21px + 5 * ((100vw - 320px) / 1280));
   padding: 40px 0;
+  -webkit-animation: 0.5s fade-in forwards;
+          animation: 0.5s fade-in forwards;
   opacity: 0.6;
   line-height: 35px;
   text-align: center;
@@ -290,13 +312,36 @@ body {
 }
 
 .todo__item .input-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   width: 20px;
   height: 20px;
   margin-right: 10px;
-  border-radius: 50%;
+  background: url(../../img/checkbox/off.svg) no-repeat;
+  background-size: cover;
+  background-position-x: center;
+}
+
+.todo__item .input-checkbox:checked {
+  background: url(../../img/checkbox/checkmark.svg);
+}
+
+.todo__item .input-checkbox:focus {
+  background: url(../../img/checkbox/focused.svg);
+}
+
+.todo__item .input-checkbox:checked:focus {
+  background: url(../../img/checkbox/focused+checkmark.svg);
 }
 
 .todo__item label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   cursor: text;
 }
 
