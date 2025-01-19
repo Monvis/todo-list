@@ -30,7 +30,7 @@ body {
 
 /* States */
 
-.done {
+.checked {
     opacity: 0.6;
     text-decoration: line-through;
 }
@@ -122,7 +122,7 @@ body {
         }
 
         .warning {
-            @include adaptive-font(14, 10);
+            @include adaptive-font(12, 9);
             position: absolute;
             bottom: -20px;
             transition: 0.5s;
@@ -151,7 +151,7 @@ body {
             overflow: hidden;
             text-overflow: ellipsis;
             border-radius: 3px;
-            background-color: rgba(182, 182, 182, 0.205);
+            background-color: rgba(182, 182, 182, 0.151);
 
             &:hover span {
                 right: 0;
@@ -206,21 +206,21 @@ body {
             height: 20px;
             margin-right: 10px;
 
-            background: url(../../img/checkbox/off.svg) no-repeat;
+            background: url(../assets/off.svg) no-repeat;
             background-size: cover;
             background-position-x: center;
         }
 
         .input-checkbox:checked {
-            background: url(../../img/checkbox/checkmark.svg);
+            background: url(../assets/checkmark.svg);
         }
 
         .input-checkbox:focus {
-            background: url(../../img/checkbox/focused.svg);
+            background: url(../assets/focused.svg);
         }
 
         .input-checkbox:checked:focus {
-            background: url(../../img/checkbox/focused+checkmark.svg)
+            background: url(../assets/focused+checkmark.svg)
         }
 
         label {
