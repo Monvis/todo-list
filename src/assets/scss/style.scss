@@ -71,17 +71,26 @@ body {
 /* 1. Todo */
 
 .todo {
+    max-width: 400px;
     margin: 0 auto;
     padding: 20px 0;
-    max-width: 400px;
     border-radius: 5px;
     background-color: #fff;
 
     &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
         h1 {
-            @include adaptive-font(26, 20);
+            @include adaptive-font(21, 17);
             font-weight: bold;
+            text-transform: uppercase;
+            margin-right: 1.5%;
+        }
+
+        h2 {
+            opacity: 0.7;
         }
     }
 
@@ -206,21 +215,21 @@ body {
             height: 20px;
             margin-right: 10px;
 
-            background: url(../assets/off.svg) no-repeat;
+            background: url(../img/off.svg) no-repeat;
             background-size: cover;
             background-position-x: center;
         }
 
         .input-checkbox:checked {
-            background: url(../assets/checkmark.svg);
+            background: url(../img/checkmark.svg);
         }
 
         .input-checkbox:focus {
-            background: url(../assets/focused.svg);
+            background: url(../img/focused.svg);
         }
 
         .input-checkbox:checked:focus {
-            background: url(../assets/focused+checkmark.svg)
+            background: url(../img/focused+checkmark.svg)
         }
 
         label {
@@ -229,7 +238,8 @@ body {
             cursor: text;
         }
 
-        p {
+        .text {
+            max-width: 250px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;

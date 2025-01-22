@@ -1,8 +1,9 @@
 
 export default {
-    base: '/',
+    root: './src',
+    base: '/todo-list/', // for gh-pages
     build: {
-        outDir: "/dist",
+        outDir: "../dist",
         emptyOutDir: true,
     },
 };

@@ -2,7 +2,7 @@
 // Product and supported by Monvis
 
 import '../scss/style.scss'
-import bin from '../assets/bin.svg'
+import bin from '../img/bin.svg'
 
 //*********************************************************************
 const message    = document.querySelector('.todo__input')
