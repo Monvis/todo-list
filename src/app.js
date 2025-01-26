@@ -76,6 +76,7 @@ function deleteTaskTrigger(elem) {
 // Event handlers
 todo.addEventListener('click', isTaskCompleate)
 todo.addEventListener('click', deleteTask)
+todo.addEventListener('click', taskTracker)
 todo.addEventListener('click', deleteTaskTrigger)
 message.addEventListener('keydown', enterBtn)
 

@@ -252,7 +252,7 @@ body {
         align-items: center;
 
         span {
-            @include adaptive-font(16, 13); 
+            @include adaptive-font(16, 12);
         }
 
         button {
