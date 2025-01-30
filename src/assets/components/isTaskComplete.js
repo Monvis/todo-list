@@ -11,9 +11,12 @@ const isTaskCompleate = elem => {
         if (todoList[i].id == checkbox.id) {
 
             if (todoList[i].checked === false) {
+
                 todoList[i].checked = true
+                localStorage.setItem('todo', JSON.stringify(todoList))
             } else {
                 todoList[i].checked = false
+                localStorage.setItem('todo', JSON.stringify(todoList))
             }
         }
     }

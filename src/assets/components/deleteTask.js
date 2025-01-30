@@ -10,7 +10,7 @@ const deleteTask = elem => {
     item.style.animation = '0.5s fade-out forwards'
     todoList.splice(index, 1)
     item.remove()
-    // taskTracker()
+    localStorage.setItem('todo', JSON.stringify(todoList))
 
     if (todoList.length == 0) {
         plugText.style = 'display: block'

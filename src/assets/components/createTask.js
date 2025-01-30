@@ -7,7 +7,9 @@ const createTask = () => {
             checked: false,
             id: todoList.length
         }
+
         todoList.push(newTodo)
+        localStorage.setItem('todo', JSON.stringify(todoList))
 
         addBtn.style.opacity = '0.5'
         plugText.style = 'display: none'
@@ -16,4 +18,4 @@ const createTask = () => {
     }
 }
 
-export { createTask }
+export { createTask, todoList }

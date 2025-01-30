@@ -1,6 +1,6 @@
 'use strict'
-// Product and supported by Monvis
 
+// Product and supported by Monvis
 import './assets/scss/style.scss'
 
 // components
@@ -21,64 +21,80 @@ const tracker    = document.querySelector('.todo__tracker')
 const warning    = document.createElement('p')
 
 // All tasks here...
-const todoList = []
+let todoList = []
 
-const emptyInputField = () => {
-    // styles
-    warning.classList.add('warning')
-    warning.innerHTML = 'This field cannot be empty'
-    inputField.appendChild(warning)
-
-    warning.style.removeProperty('animation')
-    addBtn.style.opacity = '0.5'
-    message.style.border = '1px solid #8E49EB'
-}
-
-message.oninput = () => {
-    if (message.value === '') {
-        emptyInputField()
-    } else {
-        // styles
-        addBtn.style.opacity = '1'
-        message.style.border = '1px solid rgba(0, 0, 0, 0.27)'
-        warning.style.animation = '1s fade-out forwards'
-    }
-}
-
-// func: createTask
-addBtn.onclick = () => {
-    createTask()
+// LOCAL STORAGE
+if (localStorage.getItem('todo') != undefined) {
+    todoList = JSON.parse(localStorage.getItem('todo'))
     render()
     taskTracker()
 }
 
-// func: deleteList
-deleteBtn.onclick = () => {
-    deleteList()
-    taskTracker()
-}
+window.onload = function() {
 
-// Adding a task with "Enter" button
-const enterBtn = e => {
-    if (e.keyCode === 13) {
+    const emptyInputField = () => {
+        // styles
+        warning.classList.add('warning')
+        warning.innerHTML = 'This field cannot be empty'
+        inputField.appendChild(warning)
+    
+        warning.style.removeProperty('animation')
+        addBtn.style.opacity = '0.5'
+        message.style.border = '1px solid #8E49EB'
+    }
+    
+    // check input field status
+    message.oninput = () => {
+        if (message.value === '') {
+            emptyInputField()
+        } else {
+            // styles
+            addBtn.style.opacity = '1'
+            message.style.border = '1px solid rgba(0, 0, 0, 0.27)'
+            warning.style.animation = '1s fade-out forwards'
+        }
+    }
+    
+    // func: createTask
+    addBtn.onclick = () => {
+        if (message.value === '') {
+            emptyInputField()
+        }
+        
         createTask()
         render()
         taskTracker()
     }
-}
-
-function deleteTaskTrigger(elem) {
-    if (elem.target.dataset.action !== 'delete') return 0
+    
+    // func: deleteList
+    deleteBtn.onclick = () => {
+        deleteList()
+        taskTracker()
+        localStorage.clear()
+    }
+    
+    // Adding a task with "Enter" button
+    const enterBtn = e => {
+        if (e.keyCode === 13) {
+            createTask()
+            render()
+            taskTracker()
+        }
+    }
+    
+    function deleteTaskTrigger(elem) {
+        if (elem.target.dataset.action !== 'delete') return 0
+        todo.addEventListener('click', deleteTask)
+        taskTracker()
+    }
+    
+    // Event handlers
+    todo.addEventListener('click', isTaskCompleate)
     todo.addEventListener('click', deleteTask)
-    taskTracker()
+    todo.addEventListener('click', taskTracker)
+    todo.addEventListener('click', deleteTaskTrigger)
+    message.addEventListener('keydown', enterBtn)   
 }
-
-// Event handlers
-todo.addEventListener('click', isTaskCompleate)
-todo.addEventListener('click', deleteTask)
-todo.addEventListener('click', taskTracker)
-todo.addEventListener('click', deleteTaskTrigger)
-message.addEventListener('keydown', enterBtn)
 
 export {
     todoList,
