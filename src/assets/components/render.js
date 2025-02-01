@@ -6,7 +6,7 @@ const render = () => {
     todoList.forEach((elem, i) => {
 
         if (elem.checked == true) {
-
+            // render task with checked status
             displayMessage += `
             <li class="todo__item checked" id="${i}">
                 <label>
@@ -16,7 +16,7 @@ const render = () => {
             </li>
             `
         } else {
-            
+            // render task without checked status
             displayMessage += `
             <li class="todo__item" id="${i}">
                 <label>

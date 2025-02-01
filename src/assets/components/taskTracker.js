@@ -11,7 +11,7 @@ function taskTracker() {
             ++completedTasks
         }
     }
-
+    
     tracker.innerHTML = `You have ${todoList.length - completedTasks} active task(-s) / ${todoList.length}`
 }
 

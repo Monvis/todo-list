@@ -9,9 +9,24 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Readex+Pro:wght@400;500&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="body">
 	<div class="app">
-		<div class="todo">
+		<header class="header">
+			<div class="container">
+				<div class="header__wrapper">
+					<div class="header__logo">TODO APP</div>
+					<div class="header__link">
+						<a href="https://github.com/Monvis/" target="_blank">
+							<img src="assets/img/github-icon.svg" alt="github">
+						</a>
+					</div>
+					<div class="header__theme">
+						<img id="theme-icon" src="assets/img/dark-theme.svg" alt="theme-toggle">
+					</div>
+				</div>
+			</div>
+		</header>
+		<main class="todo">
 			<div class="container">
 				<div class="todo__header">
 					<h1>DO!</h1>
@@ -34,7 +49,7 @@
 					<button class="todo__delete-btn">Clear All</button>
 				</div>
 			</div>
-		</div>
+		</main>
 	</div>
 	<script src="app.js" type="module"></script>
 </body>
