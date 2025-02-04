@@ -53,6 +53,15 @@ window.onload = function() {
         warning.style.removeProperty('animation')
         inputField.appendChild(warning)
         addBtn.style.opacity = '0.5'
+
+        // contains? --> dark theme
+        if (body.classList.contains('dark-theme')) {
+            message.style.border = '1px solid #8E49EB'
+        }
+        // dosn't contains? --> light theme
+        if (!(body.classList.contains('dark-theme'))) {
+            message.style.border = '1px solid #00B86A'
+        }
     }
 
     // check input field status
