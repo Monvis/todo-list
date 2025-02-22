@@ -232,7 +232,7 @@ body {
     }
 
     &__wrapper {
-        margin: 30px 0;
+        margin: 25px 0 30px 0;
         min-height: 170px;
         max-height: calc(100vh - 350px);
         overflow-y: auto;
@@ -294,6 +294,10 @@ body {
             line-height: 35px;
             text-align: center;
         }
+    }
+
+    &__list-filter {
+        margin-top: 50px;
     }
 
     &__item {
@@ -358,35 +362,6 @@ body {
             background-color: #497BE8;
         }
     }
-
-/*     @media screen and (min-width: 1600px) {
-
-        h1 {
-            font-size: 26px; 
-        }
-
-        li {
-            font-size: 14px;
-        }
-
-        &__footer {
-
-            span {
-                font-size: 16px; 
-            }
-
-            button {
-                font-size: 15px;
-            }
-        }
-    }
-
-    @media screen and (min-width: 440px) {
-    
-        &__list-plug {
-            font-size: 21.65px;
-        }
-    } */
 }
 
 @media screen and (max-width: 600px) {

@@ -1,11 +1,15 @@
 import { message, todoList, addBtn, plugText, warning } from '../../app'
 
+const generateId = () => {
+    return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+}
+
 const createTask = () => {
     if (message.value != '') {
         const newTodo = {
             text: message.value,
             checked: false,
-            id: todoList.length
+            id: generateId()
         }
 
         todoList.push(newTodo)

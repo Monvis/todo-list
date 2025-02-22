@@ -8,7 +8,7 @@ const render = () => {
         if (elem.checked == true) {
             // render task with checked status
             displayMessage += `
-            <li class="todo__item checked" id="${i}">
+            <li class="todo__item checked" id="${elem.id}">
                 <label>
                     <input type="checkbox" class="input-checkbox" checked id="${i}"></input>
                     <p class="text">${elem.text}</p><span class="delete" data-action="delete"><img data-action="delete" src=${bin} alt="delete"></span>
@@ -18,7 +18,7 @@ const render = () => {
         } else {
             // render task without checked status
             displayMessage += `
-            <li class="todo__item" id="${i}">
+            <li class="todo__item" id="${elem.id}">
                 <label>
                     <input type="checkbox" class="input-checkbox" id="${i}"></input>
                     <p class="text">${elem.text}</p><span class="delete" data-action="delete"><img data-action="delete" src=${bin} alt="delete"></span>

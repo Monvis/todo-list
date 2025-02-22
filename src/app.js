@@ -30,7 +30,7 @@ const warning    = document.createElement('p')
 // All tasks here...
 let todoList = []
 
-// LOCAL STORAGE
+// LOCAL STORAGE - Render tasks
 if (localStorage.getItem('todo') != undefined) {
     todoList = JSON.parse(localStorage.getItem('todo'))
     render()
@@ -117,7 +117,7 @@ window.onload = function() {
     deleteBtn.onclick = () => {
         deleteList()
         taskTracker()
-        localStorage.clear()
+        localStorage.removeItem('todo')
     }
     
     // Adding a task with "Enter" button
