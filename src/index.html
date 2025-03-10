@@ -46,17 +46,17 @@
 
 				<div class="todo__list-filter">
 					<div class="todo__list-filter-options">
-					  <label class="todo__list-filter-option">
+					  <label class="todo__list-filter-option" id="allTasks">
 						<input class="todo__list-filter-radio" type="radio" name="task-filter" value="all" checked>
 						<span>All Tasks</span>
 					  </label>
 
-					  <label class="todo__list-filter-option">
+					  <label class="todo__list-filter-option" id="activeTasks">
 						<input class="todo__list-filter-radio" type="radio" name="task-filter" value="active">
 						<span>Active Tasks</span>
 					  </label>
 
-					  <label class="todo__list-filter-option">
+					  <label class="todo__list-filter-option" id="completedTasks">
 						<input class="todo__list-filter-radio" type="radio" name="task-filter" value="completed">
 						<span>Completed Tasks</span>
 					  </label>
@@ -71,6 +71,7 @@
 						<!-- All tasks here... -->
 					</ul>
 				</div>
+
 				<div class="todo__footer">
 					<span class="todo__tracker">You have 0 active task(-s) / 0<!-- Tasks tracker here --></span>
 					<button class="todo__delete-btn">Clear All</button>

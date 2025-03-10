@@ -1,5 +1,4 @@
 import { todoList, todo, plugText } from './../../app'
-// import taskTracker from './taskTracker'
 
 const deleteList = () => {
     todo.style.animation = '1s fade-out forwards'

@@ -1,6 +1,6 @@
 import { todoList } from './../../app'
 
-const isTaskCompleate = elem => {
+const isTaskComplete = elem => {
     if (elem.target.type !== 'checkbox') {
         return 0
     }
@@ -25,4 +25,4 @@ const isTaskCompleate = elem => {
     }
 }
 
-export { isTaskCompleate }
+export { isTaskComplete }

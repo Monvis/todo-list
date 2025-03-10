@@ -1,8 +1,13 @@
-import { plugText, todoList, tracker } from './../../app'
+import { plugText, todo, todoList, tracker } from './../../app'
 
 function taskTracker() {
     if (todoList.length !== 0) {
         plugText.style = 'display: none'
+    }
+    
+    // For checked filter 
+    if (todo.innerHTML.trim() === '') {
+        plugText.style = 'display: block'
     }
 
     let completedTasks = 0

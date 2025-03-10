@@ -11,7 +11,7 @@ import darkTheme           from './assets/img/dark-theme.svg'
 import { taskTracker }     from './assets/components/taskTracker'
 import { createTask }      from './assets/components/createTask'
 import { render }          from './assets/components/render'
-import { isTaskCompleate } from './assets/components/isTaskComplete'
+import { isTaskComplete } from './assets/components/isTaskComplete'
 import { deleteTask }      from './assets/components/deleteTask'
 import { deleteList }      from './assets/components/deleteList'
 
@@ -27,6 +27,11 @@ const deleteBtn  = document.querySelector('.todo__delete-btn')
 const tracker    = document.querySelector('.todo__tracker')
 const warning    = document.createElement('p')
 
+// Filter buttons
+const allTasksBtn = document.getElementById('allTasks')
+const activeTasksBtn = document.getElementById('activeTasks')
+const completedTasksBtn = document.getElementById('completedTasks')
+
 // All tasks here...
 let todoList = []
 
@@ -34,7 +39,7 @@ let todoList = []
 if (localStorage.getItem('todo') != undefined) {
     todoList = JSON.parse(localStorage.getItem('todo'))
     render()
-    taskTracker()
+    taskTracker(todoList)
 }
 
 // LOCAL STORAGE - Themes
@@ -136,11 +141,30 @@ window.onload = function() {
     }
     
     // Event handlers
-    todo.addEventListener('click', isTaskCompleate)
+    todo.addEventListener('click', isTaskComplete)
     todo.addEventListener('click', deleteTask)
     todo.addEventListener('click', taskTracker)
     todo.addEventListener('click', deleteTaskTrigger)
     message.addEventListener('keydown', enterBtn)
+
+    // Filter event handlers - Render active filter
+    allTasksBtn.addEventListener('click', () => {
+        render('allTasks')
+        plugText.innerHTML = 'You don\'t have tasks, let\'s<br> create the first one'
+        taskTracker()
+    })
+
+    activeTasksBtn.addEventListener('click', () => {
+        render('activeTasks')
+        plugText.innerHTML = 'You don\'t have active tasks, let\'s<br> create the first one'
+        taskTracker()
+    })
+    
+    completedTasksBtn.addEventListener('click', () => {
+        render('completedTasks')
+        plugText.innerHTML = 'You don\'t have completed tasks, let\'s<br> finish the first one'
+        taskTracker()
+    })
 }
 
 export {
