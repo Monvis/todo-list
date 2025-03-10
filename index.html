@@ -8,8 +8,8 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Readex+Pro:wght@400;500&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="/todo-list/assets/index-BFSa21Hz.js"></script>
-  <link rel="stylesheet" crossorigin href="/todo-list/assets/index-UeAVRAzX.css">
+  <script type="module" crossorigin src="/todo-list/assets/index-CIuaOMk5.js"></script>
+  <link rel="stylesheet" crossorigin href="/todo-list/assets/index-CqqSVltN.css">
 </head>
 <body class="body">
 	<div class="app">
@@ -40,11 +40,31 @@
 					<h1>DO!</h1>
 					<h2>// your task manager</h2>
 				</div>
+
 				<div class="todo__input-field">
 					<input type="text" class="todo__input" placeholder="Add your new todo">
 					<button class="todo__btn">+</button>	
 				</div>
-				<!-- feat: <div class="todo__list-filter"></div> -->
+
+				<div class="todo__list-filter">
+					<div class="todo__list-filter-options">
+					  <label class="todo__list-filter-option" id="allTasks">
+						<input class="todo__list-filter-radio" type="radio" name="task-filter" value="all" checked>
+						<span>All Tasks</span>
+					  </label>
+
+					  <label class="todo__list-filter-option" id="activeTasks">
+						<input class="todo__list-filter-radio" type="radio" name="task-filter" value="active">
+						<span>Active Tasks</span>
+					  </label>
+
+					  <label class="todo__list-filter-option" id="completedTasks">
+						<input class="todo__list-filter-radio" type="radio" name="task-filter" value="completed">
+						<span>Completed Tasks</span>
+					  </label>
+					</div>
+				</div>
+
 				<div class="todo__wrapper">
 					<!-- Plug here -->
 					<h2 class="todo__list-plug">You don't have tasks, let's<br> create the first one</h2>
@@ -53,6 +73,7 @@
 						<!-- All tasks here... -->
 					</ul>
 				</div>
+
 				<div class="todo__footer">
 					<span class="todo__tracker">You have 0 active task(-s) / 0<!-- Tasks tracker here --></span>
 					<button class="todo__delete-btn">Clear All</button>
